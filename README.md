@@ -22,7 +22,7 @@ For installation, it is recommended that you fork, or clone a copy right here fr
 The folder can be saved anywhere you want to organize it, although cloning straight to the desktop is advised. 
 If you bury the application too deep into another folder, it may make navigation more confusing that it needs to be.
 
-  ---
+
 
 ### **Dependencies**
 
