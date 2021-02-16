@@ -27,9 +27,9 @@ function generateHTML(team) {
     </div>
 
     <div class="px-5">
-        <div id="teamGoesHere" class="row mx-auto">
+        <div id="teamGoesHere" class="row mx-auto justify-content-center">
             <!-- Dynamically generated cards go here. -->
-            ${team.join('')}
+            ${team.join("")}
         </div>
     </div>
 
