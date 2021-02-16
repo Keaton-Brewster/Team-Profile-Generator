@@ -7,7 +7,7 @@ function generateManagerHTML(manager) {
                 <div class="card-body">
 
                     <ul class="list-group">
-                        <li class="list-group-item">Employee ID: ${manager.id}</li>
+                        <li class="list-group-item">ID: ${manager.id}</li>
                         <li class="list-group-item">Email: <a href="mailto:${manager.email}" target="blank">${manager.email}</a></li>
                         <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
                     </ul>
@@ -24,7 +24,7 @@ function generateEngineerHTML(engineer) {
                 <div class="card-body">
 
                     <ul class="list-group">
-                        <li class="list-group-item">Employee ID: ${engineer.id}</li>
+                        <li class="list-group-item">ID: ${engineer.id}</li>
                         <li class="list-group-item">Email: <a href="mailto:${engineer.email}" target="blank">${engineer.email}</a></li>
                         <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.githubUsername}" target="blank">${engineer.githubUsername}</a></li>
                     </ul>
@@ -41,7 +41,7 @@ function generateInternHTML(intern) {
                 <div class="card-body">
 
                     <ul class="list-group">
-                        <li class="list-group-item">Employee ID: ${intern.id}</li>
+                        <li class="list-group-item">ID: ${intern.id}</li>
                         <li class="list-group-item">Email: <a href="mailto:${intern.email}" target="blank">${intern.email}</a></li>
                         <li class="list-group-item">School: ${intern.school}</li>
                     </ul>
