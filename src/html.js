@@ -1,4 +1,4 @@
-function generateHTML() {
+function generateHTML(team) {
   return `<!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +14,7 @@ function generateHTML() {
     <!-- personal CSS -->
     <link rel="stylesheet" href="main.css">
 
-    <title>Document</title>
+    <title>Your Team</title>
 </head>
 
 <body>
@@ -25,8 +25,9 @@ function generateHTML() {
     </div>
 
     <div class="px-5">
-        <div id="teamGoesHere row mx-5">
+        <div id="teamGoesHere" class="row mx-3">
             <!-- Dynamically generated cards go here. -->
+            ${team.join('')}
         </div>
     </div>
 
@@ -39,3 +40,5 @@ function generateHTML() {
 
 </html>`;
 }
+
+module.exports = generateHTML;
