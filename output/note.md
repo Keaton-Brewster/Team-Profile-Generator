@@ -1,0 +1,1 @@
+# This folder is where output gets saved to. DO NOT delete this folder, or else the application will stop working. 
