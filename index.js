@@ -1,7 +1,7 @@
 const Engineer = require("./lib/Engineer"),
   Intern = require("./lib/Intern"),
   Manager = require("./lib/Manager"),
-  { managerHTML, engineerHTML, internHTML } = require("./src/format"),
+  { managerHTML, engineerHTML, internHTML } = require("./src/employeeHTML"),
   genHTML = require("./src/html"),
   css = require("./src/css"),
   Chalk = require("chalk"),
@@ -15,7 +15,9 @@ function askForAnotherEmployee() {
   prompt([
     {
       type: "list",
-      message: `${Chalk.greenBright("Would you like to add another employee?")}`,
+      message: `${Chalk.greenBright(
+        "Would you like to add another employee?"
+      )}`,
       choices: ["Engineer", "Intern", new Inq.Separator(), "No (all done)"],
       name: "addEmployee",
     },
@@ -31,12 +33,16 @@ function askForAnotherEmployee() {
             },
             {
               type: "input",
-              message: `${Chalk.greenBright("What is this engineers employee ID?")}`,
+              message: `${Chalk.greenBright(
+                "What is this engineers employee ID?"
+              )}`,
               name: "engineerID",
             },
             {
               type: "input",
-              message: `${Chalk.greenBright("What is this engineers email address?")}`,
+              message: `${Chalk.greenBright(
+                "What is this engineers email address?"
+              )}`,
               name: "engineerEmail",
             },
             {
@@ -66,17 +72,23 @@ function askForAnotherEmployee() {
             },
             {
               type: "input",
-              message: `${Chalk.greenBright("What is this interns employee ID?")}`,
+              message: `${Chalk.greenBright(
+                "What is this interns employee ID?"
+              )}`,
               name: "internID",
             },
             {
               type: "input",
-              message: `${Chalk.greenBright("What is this interns email address?")}`,
+              message: `${Chalk.greenBright(
+                "What is this interns email address?"
+              )}`,
               name: "internEmail",
             },
             {
               type: "input",
-              message: `${Chalk.greenBright("Where is this intern going to school?")}`,
+              message: `${Chalk.greenBright(
+                "Where is this intern going to school?"
+              )}`,
               name: "internSchool",
             },
           ]).then((data) => {
@@ -94,7 +106,9 @@ function askForAnotherEmployee() {
           let html = genHTML(team);
           fs.writeFileSync("./output/index.html", html);
           fs.writeFileSync("./output/main.css", css);
-          return console.log("all done!", html);
+          return console.log(
+            Chalk.cyanBright("New files created in the output folder!")
+          );
       }
     })
     .catch((err) => {
@@ -142,6 +156,8 @@ function init() {
     });
 }
 
+// This bit is what will run when you enter 'node index.js' into the command line,
+//  and from there the rest of the application gets launched
 prompt([
   {
     type: "list",

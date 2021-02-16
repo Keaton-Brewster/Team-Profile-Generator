@@ -35,7 +35,7 @@ describe("Employee class", () => {
     it("Should return the email address inputted into the employee constructor", () => {
       const emp = new Employee("NAME", "ID", "EMAIL");
 
-      expect(emp.getEmail()).toEqual("EMAIL");
+      expect(emp.getEmail()).toEqual("mailto:EMAIL");
     });
   });
   describe("getRole", () => {

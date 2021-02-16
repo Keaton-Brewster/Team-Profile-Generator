@@ -1,6 +1,5 @@
 const Employee = require("../lib/Employee");
-const engineer = require("../lib/Engineer");
-const Engineer = engineer.Engineer;
+const Engineer = require("../lib/Engineer");
 
 describe("Engineer class", () => {
   it("should be an extension of the Employee class", () => {
@@ -44,7 +43,7 @@ describe("Engineer class", () => {
     it("Should return the email address inputted into the employee constructor", () => {
       const emp = new Engineer("NAME", "ID", "EMAIL");
 
-      expect(emp.getEmail()).toEqual("EMAIL");
+      expect(emp.getEmail()).toEqual("mailto:EMAIL");
     });
   });
   describe("getRole", () => {
@@ -58,7 +57,7 @@ describe("Engineer class", () => {
     it("Should return the github username of the Engineer", () => {
       const emp = new Engineer("NAME", "ID", "EMAIL", "github username");
 
-      expect(emp.githubUsername).toEqual("github username");
+      expect(emp.getGithub()).toEqual("https://github.com/github username");
     });
   });
 });

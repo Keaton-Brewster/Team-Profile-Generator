@@ -1,3 +1,5 @@
+// Here is the function that takes in ar array of strings and created a file with them. 
+// IMPORTANT to note that the string in the array you pass in much be formatted PRIOR to being added to the array. 
 function generateHTML(team) {
   return `<!DOCTYPE html>
 <html lang="en">

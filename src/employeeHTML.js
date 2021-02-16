@@ -1,3 +1,4 @@
+// Here I have all the functions for generating a snippet of html based on which type of new employee is added
 function generateManagerHTML(manager) {
   return `  <div class="card col-3 p-0 m-1">
                 <div class="card-header bg-dark">
