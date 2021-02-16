@@ -19,7 +19,7 @@ function generateEngineerHTML(engineer) {
   return `  <div class="card col-3 p-0 m-1">
                 <div class="card-header bg-primary">
                     <h2 class="card-title">${engineer.name}</h2>
-                    <p>Manager</p>
+                    <p>Engineer</p>
                 </div>
                 <div class="card-body">
 
@@ -36,7 +36,7 @@ function generateInternHTML(intern) {
   return `  <div class="card col-3 p-0 m-1">
                 <div class="card-header bg-primary">
                     <h2 class="card-title">${intern.name}</h2>
-                    <p>Manager</p>
+                    <p>Intern</p>
                 </div>
                 <div class="card-body">
 
