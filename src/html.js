@@ -20,7 +20,7 @@ function generateHTML(team) {
 <body>
 
 
-    <div class="py-3 mb-5 bg-dark text-center">
+    <div class="py-3 mb-5 bg-primary text-center">
         <h1 class="display-3 text-light">Your Team</h1>
     </div>
 

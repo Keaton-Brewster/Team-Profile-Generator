@@ -1,10 +1,10 @@
 function generateManagerHTML(manager) {
   return `  <div class="card col-3 p-0 m-1">
-                <div class="card-header bg-primary">
+                <div class="card-header bg-dark">
                     <h2 class="card-title">${manager.name}</h2>
                     <p>Manager</p>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-dark">
 
                     <ul class="list-group">
                         <li class="list-group-item">ID: ${manager.id}</li>
@@ -17,11 +17,11 @@ function generateManagerHTML(manager) {
 
 function generateEngineerHTML(engineer) {
   return `  <div class="card col-3 p-0 m-1">
-                <div class="card-header bg-primary">
+                <div class="card-header bg-dark">
                     <h2 class="card-title">${engineer.name}</h2>
                     <p>Engineer</p>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-dark">
 
                     <ul class="list-group">
                         <li class="list-group-item">ID: ${engineer.id}</li>
@@ -34,11 +34,11 @@ function generateEngineerHTML(engineer) {
 
 function generateInternHTML(intern) {
   return `  <div class="card col-3 p-0 m-1">
-                <div class="card-header bg-primary">
+                <div class="card-header bg-dark">
                     <h2 class="card-title">${intern.name}</h2>
                     <p>Intern</p>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-dark">
 
                     <ul class="list-group">
                         <li class="list-group-item">ID: ${intern.id}</li>
