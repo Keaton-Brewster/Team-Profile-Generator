@@ -1,6 +1,4 @@
-const inquirer = require("inquirer");
-const Employee = require("./lib/Employee"),
-  Engineer = require("./lib/Engineer"),
+const Engineer = require("./lib/Engineer"),
   Intern = require("./lib/Intern"),
   Manager = require("./lib/Manager"),
   { managerHTML, engineerHTML, internHTML } = require("./src/format"),
@@ -18,7 +16,7 @@ function askForAnotherEmployee() {
     {
       type: "list",
       message: `${Chalk.blue("Would you like to add another employee?")}`,
-      choices: ["Engineer", "Intern", new Inq.Separator(), "No"],
+      choices: ["Engineer", "Intern", new Inq.Separator(), "No (all done)"],
       name: "addEmployee",
     },
   ])
@@ -92,7 +90,7 @@ function askForAnotherEmployee() {
             askForAnotherEmployee();
           });
           break;
-        case "No":
+        case "No (all done)":
           let html = genHTML(team);
           fs.writeFileSync("./output/index.html", html);
           fs.writeFileSync("./output/main.css", css);
