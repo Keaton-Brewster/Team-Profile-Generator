@@ -4,77 +4,150 @@ const Employee = require("./lib/Employee"),
   Intern = require("./lib/Intern"),
   Manager = require("./lib/Manager"),
   { managerHTML, engineerHTML, internHTML } = require("./src/format"),
+  genHTML = require("./src/html"),
   Chalk = require("chalk"),
   Inq = require("inquirer"),
+  prompt = Inq.createPromptModule(),
   fs = require("fs");
 
-let employees = [];
+let team = [];
+
+function askForAnotherEmployee() {
+  prompt([
+    {
+      type: "list",
+      message: `${Chalk.blue("Would you like to add another employee?")}`,
+      choices: ["Engineer", "Intern", new Inq.Separator(), "No"],
+      name: "addEmployee",
+    },
+  ])
+    .then((data) => {
+      switch (data.addEmployee) {
+        case "Engineer":
+          Inq.prompt([
+            {
+              type: "input",
+              message: `${Chalk.blue("What is this engineers name?")}`,
+              name: "engineerName",
+            },
+            {
+              type: "input",
+              message: `${Chalk.blue("What is this engineers employee ID?")}`,
+              name: "engineerID",
+            },
+            {
+              type: "input",
+              message: `${Chalk.blue("What is this engineers email address?")}`,
+              name: "engineerEmail",
+            },
+            {
+              type: "input",
+              message: `${Chalk.blue(
+                "What is this engineers Github username?"
+              )}`,
+              name: "engineerGithub",
+            },
+          ]).then((data) => {
+            const newEngineer = new Engineer(
+              data.engineerName,
+              data.engineerID,
+              data.engineerEmail,
+              data.engineerGithub
+            );
+            team.push(engineerHTML(newEngineer));
+            askForAnotherEmployee();
+          });
+          break;
+        case "Intern":
+          Inq.prompt([
+            {
+              type: "input",
+              message: `${Chalk.blue("What is this interns name?")}`,
+              name: "internName",
+            },
+            {
+              type: "input",
+              message: `${Chalk.blue("What is this interns employee ID?")}`,
+              name: "internID",
+            },
+            {
+              type: "input",
+              message: `${Chalk.blue("What is this interns email address?")}`,
+              name: "internEmail",
+            },
+            {
+              type: "input",
+              message: `${Chalk.blue("Where is this intern going to school?")}`,
+              name: "internSchool",
+            },
+          ]).then((data) => {
+            const newIntern = new Intern(
+              data.internName,
+              data.internID,
+              data.internEmail,
+              data.internSchool
+            );
+            team.push(internHTML(newIntern));
+            askForAnotherEmployee();
+          });
+          break;
+        case "No":
+          let html = genHTML(team);
+          fs.writeFileSync("index.html", html);
+          return console.log("all done!", html);
+      }
+    })
+    .catch((err) => {
+      throw new Error(
+        `Something got caught in the add another employee function: ${err}`
+      );
+    });
+}
 
 function init() {
-  Inq.prompt([
+  prompt([
     {
-      type: "input",
-      message: `${Chalk.blue("What is your team managers name?")}`,
+      message: `${Chalk.greenBright("What is your team managers name?")}`,
       name: "managerName",
     },
     {
-      type: "input",
-      message: `${Chalk.blue("What is your managers employee ID?")}`,
+      type: "number",
+      message: `${Chalk.greenBright("What is your managers employee ID?")}`,
       name: "managerID",
     },
     {
-      type: "input",
-      message: `${Chalk.blue("What is your managers email address?")}`,
+      message: `${Chalk.greenBright("What is your managers email address?")}`,
       name: "managerEmail",
     },
     {
-      type: "input",
-      message: `${Chalk.blue("What is your managers office phone number?")}`,
-      name: "managerPhone",
+      type: "number",
+      message: `${Chalk.greenBright("What is your managers office number?")}`,
+      name: "managerOffice",
     },
-  ]).then((data) => {
-    const manager = new Manager(
-      data.managerName,
-      data.managerID,
-      data.managerEmail,
-      data.managerPhone
-    );
-    managerHTML(manager);
-    Inq.prompt([
-      {
-        type: "list",
-        message: `${Chalk.blue("Would you like to add another employee?")}`,
-        choices: ["Engineer", "Intern", "No"],
-        name: "addEmployee",
-      },
-    ])
-      .then((data) => {
-        let newEmployee;
+  ])
+    .then((data) => {
+      const manager = new Manager(
+        data.managerName,
+        data.managerID,
+        data.managerEmail,
+        data.managerPhone
+      );
+      team.push(managerHTML(manager));
 
-        switch (data.addEmployee) {
-          case "Engineer":
-            employees++;
-            newEmployee = Engineer.addEngineer();
-            break;
-          case "Intern":
-            employees++;
-            newEmployee = Intern.addIntern();
-            break;
-          case "No":
-            return;
-        }
-      })
-      .catch((err) => {
-        Error.prototype.message = "Something went wrong";
-        throw new Error(`${Error.message}: ${err}`);
-      });
-  });
+      askForAnotherEmployee();
+    })
+    .catch((err) => {
+      Error.prototype.message = "Something got caught in the init function...";
+      throw new Error(`${Error.message}: ${err}`);
+    });
 }
 
-Inq.prompt([
+prompt([
   {
     type: "list",
-    message: `${Chalk.blue("Hello there. Are you ready to build your team?")}`,
+    message: `${Chalk.greenBright(
+      "Hello there. Are you ready to build your team?"
+    )}`,
     choices: ["Yes", "No"],
     name: "start",
   },
@@ -84,6 +157,6 @@ Inq.prompt([
       init();
       break;
     case "No":
-      return;
+      return console.log(Chalk.redBright("Why are you wasting our time?"));
   }
 });
