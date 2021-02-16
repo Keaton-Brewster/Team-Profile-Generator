@@ -43,6 +43,13 @@ and then simply follow the prompts to have your team page generated!
 
 ### Video Tutorial: 
   [Click here](https://drive.google.com/file/d/1Je8km_Q7KigayHc3BKck9CCwqcis5saJ/view)
+
+---
+
+## Example output:
+
+![Screen Shot 2021-02-16 at 1 57 27 PM](https://user-images.githubusercontent.com/65474893/108114902-069ba600-705f-11eb-8b98-fbe195f98eae.png)
+
   
   ---
 ## <a id='questions'></a> Questions?
