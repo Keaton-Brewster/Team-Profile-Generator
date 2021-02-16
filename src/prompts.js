@@ -102,8 +102,8 @@ function askForAnotherEmployee() {
           break;
         case "No (all done)":
           let html = genHTML(team);
-          fs.writeFileSync("./output/index.html", html);
-          fs.writeFileSync("./output/main.css", css);
+          fs.writeFileSync("./output/index.html", html, "utf8");
+          fs.writeFileSync("./output/main.css", css, "utf8");
           return console.log(
             Chalk.cyanBright("New files created in the output folder!")
           );
