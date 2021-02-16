@@ -15,7 +15,7 @@ function askForAnotherEmployee() {
   prompt([
     {
       type: "list",
-      message: `${Chalk.blue("Would you like to add another employee?")}`,
+      message: `${Chalk.greenBright("Would you like to add another employee?")}`,
       choices: ["Engineer", "Intern", new Inq.Separator(), "No (all done)"],
       name: "addEmployee",
     },
@@ -26,22 +26,22 @@ function askForAnotherEmployee() {
           Inq.prompt([
             {
               type: "input",
-              message: `${Chalk.blue("What is this engineers name?")}`,
+              message: `${Chalk.greenBright("What is this engineers name?")}`,
               name: "engineerName",
             },
             {
               type: "input",
-              message: `${Chalk.blue("What is this engineers employee ID?")}`,
+              message: `${Chalk.greenBright("What is this engineers employee ID?")}`,
               name: "engineerID",
             },
             {
               type: "input",
-              message: `${Chalk.blue("What is this engineers email address?")}`,
+              message: `${Chalk.greenBright("What is this engineers email address?")}`,
               name: "engineerEmail",
             },
             {
               type: "input",
-              message: `${Chalk.blue(
+              message: `${Chalk.greenBright(
                 "What is this engineers Github username?"
               )}`,
               name: "engineerGithub",
@@ -61,22 +61,22 @@ function askForAnotherEmployee() {
           Inq.prompt([
             {
               type: "input",
-              message: `${Chalk.blue("What is this interns name?")}`,
+              message: `${Chalk.greenBright("What is this interns name?")}`,
               name: "internName",
             },
             {
               type: "input",
-              message: `${Chalk.blue("What is this interns employee ID?")}`,
+              message: `${Chalk.greenBright("What is this interns employee ID?")}`,
               name: "internID",
             },
             {
               type: "input",
-              message: `${Chalk.blue("What is this interns email address?")}`,
+              message: `${Chalk.greenBright("What is this interns email address?")}`,
               name: "internEmail",
             },
             {
               type: "input",
-              message: `${Chalk.blue("Where is this intern going to school?")}`,
+              message: `${Chalk.greenBright("Where is this intern going to school?")}`,
               name: "internSchool",
             },
           ]).then((data) => {
