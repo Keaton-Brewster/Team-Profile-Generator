@@ -1,5 +1,5 @@
 function generateManagerHTML(manager) {
-  return `  <div class="card bg-dark col-3">
+  return `  <div class="card bg-dark col-3 m-1">
                 <div class="card-body">
                     <h2 class="card-title">${manager.name}</h2>
                     <p class="card-text">Manager</p>
@@ -13,7 +13,7 @@ function generateManagerHTML(manager) {
 }
 
 function generateEngineerHTML(engineer) {
-  return `  <div class="card bg-dark col-3">
+  return `  <div class="card bg-dark col-3 m-1">
                 <div class="card-body">
                     <h2 class="card-title">${engineer.name}</h2>
                     <p class="card-text">Engineer</p>
@@ -27,7 +27,7 @@ function generateEngineerHTML(engineer) {
 }
 
 function generateInternHTML(intern) {
-  return `  <div class="card bg-dark col-3">
+  return `  <div class="card bg-dark col-3 m-1">
                 <div class="card-body">
                     <h2 class="card-title">${intern.name}</h2>
                     <p class="card-text">Intern</p>
