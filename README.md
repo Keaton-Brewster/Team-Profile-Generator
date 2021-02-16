@@ -5,7 +5,7 @@ This application is covered under the MIT license.
 
   ## Description
 
-Have you ever needed to create a page that highlights your project team in a pleasing, professional way? Then you have needed this application. Driven by node.js and the command line, this simple application will take in all the information about your team that you can think of, and dynamically generate a professionaly, pollished page to highlight each team member. 
+Have you ever needed to create a page that highlights your project team in a pleasing, professional way? Then you have needed this application. Driven by node.js and the command line, this simple application will take in all the information about your team that you can think of, and dynamically generate a professional, polished page to highlight each team member. 
 
  
   ---
