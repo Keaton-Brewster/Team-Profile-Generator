@@ -5,6 +5,7 @@ const Employee = require("./lib/Employee"),
   Manager = require("./lib/Manager"),
   { managerHTML, engineerHTML, internHTML } = require("./src/format"),
   genHTML = require("./src/html"),
+  css = require("./src/css"),
   Chalk = require("chalk"),
   Inq = require("inquirer"),
   prompt = Inq.createPromptModule(),
@@ -93,7 +94,8 @@ function askForAnotherEmployee() {
           break;
         case "No":
           let html = genHTML(team);
-          fs.writeFileSync("index.html", html);
+          fs.writeFileSync("./output/index.html", html);
+          fs.writeFileSync("./output/main.css", css);
           return console.log("all done!", html);
       }
     })
