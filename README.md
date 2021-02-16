@@ -42,7 +42,7 @@ node index.js
 and then simply follow the prompts to have your team page generated!
 
 ### Video Tutorial: 
-  [Click here (no link yet)]()
+  [Click here](https://drive.google.com/file/d/1Je8km_Q7KigayHc3BKck9CCwqcis5saJ/view)
   
   ---
 ## <a id='questions'></a> Questions?
