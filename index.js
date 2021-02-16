@@ -4,6 +4,7 @@ const Engineer = require("./lib/Engineer"),
   { managerHTML, engineerHTML, internHTML } = require("./src/employeeHTML"),
   genHTML = require("./src/html"),
   css = require("./src/css"),
+  { validateNumber, validateEmail } = require("./src/validate"),
   Chalk = require("chalk"),
   Inq = require("inquirer"),
   prompt = Inq.createPromptModule(),
@@ -27,26 +28,24 @@ function askForAnotherEmployee() {
         case "Engineer":
           Inq.prompt([
             {
-              type: "input",
               message: `${Chalk.greenBright("What is this engineers name?")}`,
               name: "engineerName",
             },
             {
-              type: "input",
               message: `${Chalk.greenBright(
                 "What is this engineers employee ID?"
               )}`,
               name: "engineerID",
+              validate: validateNumber,
             },
             {
-              type: "input",
               message: `${Chalk.greenBright(
                 "What is this engineers email address?"
               )}`,
               name: "engineerEmail",
+              validate: validateEmail
             },
             {
-              type: "input",
               message: `${Chalk.greenBright(
                 "What is this engineers Github username?"
               )}`,
@@ -66,26 +65,24 @@ function askForAnotherEmployee() {
         case "Intern":
           Inq.prompt([
             {
-              type: "input",
               message: `${Chalk.greenBright("What is this interns name?")}`,
               name: "internName",
             },
             {
-              type: "input",
               message: `${Chalk.greenBright(
                 "What is this interns employee ID?"
               )}`,
               name: "internID",
+              validate: validateNumber,
             },
             {
-              type: "input",
               message: `${Chalk.greenBright(
                 "What is this interns email address?"
               )}`,
               name: "internEmail",
+              validate: validateEmail
             },
             {
-              type: "input",
               message: `${Chalk.greenBright(
                 "Where is this intern going to school?"
               )}`,
@@ -125,18 +122,19 @@ function init() {
       name: "managerName",
     },
     {
-      type: "number",
       message: `${Chalk.greenBright("What is your managers employee ID?")}`,
       name: "managerID",
+      validate: validateNumber,
     },
     {
       message: `${Chalk.greenBright("What is your managers email address?")}`,
       name: "managerEmail",
+      validate: validateEmail,
     },
     {
-      type: "number",
       message: `${Chalk.greenBright("What is your managers office number?")}`,
       name: "managerOffice",
+      validate: validateNumber,
     },
   ])
     .then((data) => {
@@ -144,7 +142,7 @@ function init() {
         data.managerName,
         data.managerID,
         data.managerEmail,
-        data.managerPhone
+        data.managerOffice
       );
       team.push(managerHTML(manager));
 
