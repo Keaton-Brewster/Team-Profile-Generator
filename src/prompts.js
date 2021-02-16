@@ -150,7 +150,7 @@ function init() {
       askForAnotherEmployee();
     })
     .catch((err) => {
-      Error.prototype.message = "Something got caught in the init function...";
+      Error.prototype.message = "Something got caught in the init function:";
       throw new Error(`${Error.message}: ${err}`);
     });
 }
