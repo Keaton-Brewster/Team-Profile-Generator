@@ -1,5 +1,5 @@
 const validateNumber = (input) => {
-  if (/[0-9]/.test(input) === false) {
+  if (/[0-9]/.test(input) === false || /[a-zA-Z]/.test(input) === true) {
     throw new Error("Please input a number");
   } else {
     return true;
