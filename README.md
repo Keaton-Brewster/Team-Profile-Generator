@@ -48,7 +48,8 @@ and then simply follow the prompts to have your team page generated!
 
 ## Example output:
 
-![Screen Shot 2021-02-16 at 1 57 27 PM](https://user-images.githubusercontent.com/65474893/108114902-069ba600-705f-11eb-8b98-fbe195f98eae.png)
+![Screen Shot 2021-02-18 at 7 21 13 PM](https://user-images.githubusercontent.com/65474893/108443554-a05d8180-721e-11eb-90a3-eecef82beff0.png)
+
 
   
   ---
